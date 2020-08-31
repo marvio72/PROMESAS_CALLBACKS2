@@ -1,0 +1,33 @@
+# Creado por https://www.toptal.com/developers/gitignore/api/osx
+# Edite en https://www.toptal.com/developers/gitignore?templates=osx
+
+### OSX ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# El icono debe terminar con dos \ r
+Icono
+
+# Miniaturas
+._ *
+
+# Archivos que pueden aparecer en la raíz de un volumen
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Traspa
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directorios potencialmente creados en el recurso compartido AFP remoto
+.AppleDB
+.AppleDesktop
+Carpeta de basura de red
+Elementos temporales
+.apdisk
+node_modules
+
+# Fin de https://www.toptal.com/developers/gitignore/api/osx
