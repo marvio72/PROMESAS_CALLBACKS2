@@ -1,12 +1,8 @@
-import './sass/estilos.scss';
-import { buscarHeroe, buscarHeroeAsync } from './js/promesas';
+const { obtenerHeroesArr } = require("./js/await");
+
+obtenerHeroesArr().then(console.table);
 
 
-buscarHeroe('capi').then(console.log)
-  .catch(console.warn);
-
-buscarHeroeAsync('spider').then(heroe => console.log(heroe))
-  .catch(console.warn);
 
 
 
