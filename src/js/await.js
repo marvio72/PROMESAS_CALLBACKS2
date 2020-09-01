@@ -1,4 +1,4 @@
-import { buscarHeroeAsync } from "./promesas";
+import { buscarHeroeAsync, buscarHeroe } from "./promesas";
 
 const heroesIds = [
   'capi',
@@ -8,23 +8,17 @@ const heroesIds = [
 
 export const obtenerHeroesArr = async() => {
 
-  const heroesArr = [];
+  
+  //Otra manera simplificada para optimizar el tiempo de consulta
+  
+  return await Promise.all(heroesIds.map( buscarHeroe ));
+  
+  // const heroesArr = [];
 
-  // No es recomendable realizar este metodo para esperar los resultados de la busqueda y asi completar el proceso
+
   // for( const id of heroesIds){
-  // buscarHeroeAsync(id).then(heroe => heroesArr.push(heroe));
+  //   heroesArr.push(buscarHeroe(id));
   // }
 
-  // setTimeout(() => {
-  //   console.log('ObtenerHeroes');
-  //   console.table(heroesArr);
-  // }, 1000);
-
-  for( const id of heroesIds){
-    const heroe = await buscarHeroeAsync(id);
-    heroesArr.push(heroe);
-  }
-
-  return heroesArr;
-
+  // return await Promise.all(heroesArr);
 };
