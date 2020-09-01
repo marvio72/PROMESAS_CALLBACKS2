@@ -7,18 +7,22 @@ const heroesIds = [
 ];
 
 export const obtenerHeroesArr = async() => {
-
-  
-  //Otra manera simplificada para optimizar el tiempo de consulta
-  
   return await Promise.all(heroesIds.map( buscarHeroe ));
-  
-  // const heroesArr = [];
+};
 
+export const obtenerHeroeAwait = async(id) => {
 
-  // for( const id of heroesIds){
-  //   heroesArr.push(buscarHeroe(id));
-  // }
+  try {
+      const heroe = await buscarHeroeAsync(id);
+      return heroe;
 
-  // return await Promise.all(heroesArr);
+  } catch (error) {
+      console.log('CATCH!!');
+      // console.log(error);
+      // throw error;
+      return{
+        nombre: 'no hay nombre',
+        poder: 'no hay poder'
+      };
+  }
 };
